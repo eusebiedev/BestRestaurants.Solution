@@ -18,14 +18,14 @@
 
 1. _Open your shell of choice (e.g., Terminal or GitBash) and run these commands in order:_
 2. _Clone this repository by running $ `git clone https://github.com/user/examplerepo.git` (replace url with link copied from github)_
-3. _Navigate to this project's production directory called "ToDoList" with $ `cd BestResaurants`._
+3. _Navigate to this project's production directory called "BestRestaurants" with $ `cd BestResaurants`._
 4. Within the production directory "BestRestaurants", create a new file called `appsettings.json`.
 5. Within `appsettings.json`, put in the following code, replacing the `uid` and `pwd` values with your own username and password for MySQL. For the LearnHowToProgram.com lessons, we always assume the `uid` is `root` and the `pwd` is `epicodus`.
 
 ```json
 {
   "ConnectionStrings": {
-      "DefaultConnection": "Server=localhost;Port=3306;database=[mysql workbench database goes here];uid=root;pwd=epicodus;"
+      "DefaultConnection": "Server=localhost;Port=3306;database=[best_restaurants];uid=root;pwd=epicodus;"
   }
 }
 ```
@@ -37,7 +37,7 @@
 
 ## [MIT](https://opensource.org/license/mit/) License
 
-Copyright (c) 5/17/2023, Joe Wilfong & Eusebie Siebenberg
+Copyright (c) 5/18/2023, Joe Wilfong & Eusebie Siebenberg
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
