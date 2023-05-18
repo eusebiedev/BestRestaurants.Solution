@@ -1,9 +1,11 @@
 body {
-	background: url('/bg_img.jpg') no-repeat center center fixed; 
+	background: url('/bg_img.jpg') no-repeat center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  color: rgb(0, 0, 0);
+  font-family:monospace;
 }
 div#footer {
 	position:fixed;
@@ -13,4 +15,8 @@ div#footer {
 	color:#CCC;
 	background:#333;
 	padding:8px;
+}
+
+a {
+  color: rgb(90, 255, 225);
 }

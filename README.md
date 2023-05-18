@@ -25,7 +25,7 @@
 ```json
 {
   "ConnectionStrings": {
-      "DefaultConnection": "Server=localhost;Port=3306;database=[best_restaurants];uid=root;pwd=epicodus;"
+      "DefaultConnection": "Server=localhost;Port=3306;database=best_restaurants;uid=root;pwd=epicodus;"
   }
 }
 ```
