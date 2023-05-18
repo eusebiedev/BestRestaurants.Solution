@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-@model BestRestaurants.Models.Category
+@model BestRestaurants.Models.Cuisine
 
 <h2>Edit</h2>
 
@@ -15,6 +15,9 @@
   @Html.LabelFor(model => model.Name)
   @Html.EditorFor(model => model.Name)
 
-  <input type="submit" value="Save" />
+  @Html.LabelFor(model => model.Type)
+  @Html.EditorFor(model => model.Type)
+
+  <input type="submit" value="Save" class="btn btn-primary btn-sm"  />
 }
 <p>@Html.ActionLink("Back to list", "Index")</p>

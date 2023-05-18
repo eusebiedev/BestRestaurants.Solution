@@ -10,6 +10,5 @@ namespace BestRestaurants.Controllers
       {
         return View();
       }
-
     }
 }

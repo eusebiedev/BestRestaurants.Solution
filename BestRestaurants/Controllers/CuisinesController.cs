@@ -59,7 +59,7 @@ namespace BestRestaurants.Controllers
     public ActionResult Delete(int id)
     {
       Cuisine thisCuisine = _db.Cuisines.FirstOrDefault(cuisine => cuisine.CuisineId == id);
-      return View(thisRestaurant);
+      return View(thisCuisine);
     }
 
     [HttpPost, ActionName("Delete")]

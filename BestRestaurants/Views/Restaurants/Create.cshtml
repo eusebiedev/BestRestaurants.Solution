@@ -1,0 +1,31 @@
+@{
+  Layout = "_Layout";
+}
+
+@model BestRestaurants.Models.Restaurant
+
+<h4>Add a new restaurant</h4>
+
+<p><strong>NOTE:</strong> You need to have at least one Cuisine before you can add a Restaurant!</p>
+<p>Go to @Html.ActionLink("this page", "Create", "Cuisines") to create a cuisine.</p>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+
+  @Html.LabelFor(model => model.Description)
+  @Html.TextBoxFor(model => model.Description)
+
+  @Html.LabelFor(model => model.Address)
+  @Html.TextBoxFor(model => model.Address)
+
+  @Html.LabelFor(model => model.Phone)
+  @Html.TextBoxFor(model => model.Phone)
+
+  @Html.LabelFor(model => model.Cuisine)
+  @Html.DropDownList("CuisineId")
+
+  <input type="submit" value="Add new restaurant" class="btn btn-primary btn-sm" />
+}
+<p>@Html.ActionLink("Show all items", "Index")</p>

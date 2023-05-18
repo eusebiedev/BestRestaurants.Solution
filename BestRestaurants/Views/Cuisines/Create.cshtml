@@ -9,7 +9,9 @@
 { 
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name)
-  <input type="submit" value="Add a new cuisine" />
+  @Html.LabelFor(model => model.Type)
+  @Html.TextBoxFor(model => model.Type)
+  <input type="submit" value="Add a new cuisine" class="btn btn-primary btn-sm"  />
 }
 
 <p>@Html.ActionLink("Show all cuisines", "Index")</p>
