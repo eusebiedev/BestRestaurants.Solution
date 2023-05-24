@@ -1,0 +1,35 @@
+@{
+  Layout = "_Layout";
+}
+
+@using BestRestaurants.Models
+@model BestRestaurants.Models.Food
+
+<h2>Food Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.FoodType): @Html.DisplayFor(model => model.FoodType)</h3>
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This food does not belong to any restaurants</p>
+}
+else
+{
+  <h4>Restaurants the food belongs to:</h4>
+  <ul>
+  @foreach(RestaurantFood join in Model.JoinEntities)
+  {
+    <li>@join.Restaurant.Name</li>
+    @using (Html.BeginForm("DeleteJoin", "Foods"))
+    {
+      @Html.Hidden("joinId", @join.RestaurantFoodId)
+      <input type="submit" value="Delete"/>
+    }
+  }
+  </ul>
+}
+
+<p>@Html.ActionLink("Edit Food", "Edit", new { id = Model.FoodId })</p>
+<p>@Html.ActionLink("Add a Restaurant", "AddRestaurant", new { id = Model.FoodId })</p>
+<p>@Html.ActionLink("Delete Food", "Delete", new { id = Model.FoodId })</p>
+<p>@Html.ActionLink("Back to list", "Index")</p>

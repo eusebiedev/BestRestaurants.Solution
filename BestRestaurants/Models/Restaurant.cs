@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace BestRestaurants.Models
 {
   public class Restaurant
@@ -9,5 +11,8 @@ namespace BestRestaurants.Models
     public string Description { get; set; }
     public int CuisineId { get; set; }
     public Cuisine Cuisine { get; set; }
+
+    public List<RestaurantFood> JoinEntities { get;} 
+
   }
 }
