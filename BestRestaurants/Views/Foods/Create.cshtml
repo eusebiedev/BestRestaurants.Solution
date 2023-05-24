@@ -5,6 +5,7 @@
 @model BestRestaurants.Models.Food
 
 <h4>Add a new Food</h4>
+<p>@Html.ValidationMessageFor(model => model.FoodType, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 
 @using (Html.BeginForm())
 {
@@ -14,6 +15,6 @@
   @Html.LabelFor(model => model.FoodPrice)
   @Html.TextBoxFor(model => model.FoodPrice)
 
-  <input type="submit" value="Add new tag" class="btn btn-success" />
+  <input type="submit" value="Add new food" class="btn btn-success" />
 }
 <p>@Html.ActionLink("Show all foods", "Index")</p>

@@ -2,9 +2,57 @@
   Layout = "_Layout";
 }
 
-<h1>Welcome to the Best Restaurants of 2023!</h1>
+@using BestRestaurants.Models;
 
-<h3><a href='/cuisines'>View Cuisines</a></h3>
-<h3><a href='/restaurants'>View Restaurants</a></h3>
+<div class="container my-5">
+<h1>Welcome to the Best Restaurants in 2023!</h1>
+<hr>
 
-<h3>@Html.ActionLink("See all foods", "Index", "Foods")</h3>
+<div class="col">
+<h4>Cuisines</h4>
+@if (Model["cuisines"].Length == 0)
+{
+  <p>No Cuisines have been added yet!</p>
+} 
+<ul>
+  @foreach (Cuisine cuisine in Model["cuisines"])
+  {
+    <li>@Html.ActionLink(@cuisine.Name, "Details", "Cuisines", new { id = @cuisine.CuisineId})</li>
+  }
+</ul>
+</div>
+
+<div class="col">
+<h4>Restaurants</h4>
+@if (Model["restaurants"].Length == 0)
+{
+  <p>No Restaurants have been added yet!</p>
+} 
+<ul>
+  @foreach (Restaurant restaurant in Model["restaurants"])
+  {
+    <li>@Html.ActionLink(@restaurant.Name, "Details", "Restaurants", new { id = @restaurant.RestaurantId})</li>
+  }
+</ul>
+</div>
+
+<div class="col">
+<h4>Foods</h4>
+@if (Model["foods"].Length == 0)
+{
+  <p>No Foods have been added yet!</p>
+} 
+<ul>
+  @foreach (Food food in Model["foods"])
+  {
+    <li>@Html.ActionLink(@food.FoodType, "Details", "Foods", new { id = @food.FoodId})</li>
+  }
+</ul>
+</div>
+
+<hr>
+
+<p>@Html.ActionLink("Manage restaurants", "Index", "Restaurants")</p> 
+<p>@Html.ActionLink("Manage cuisines", "Index", "Cuisines")</p>
+<p>@Html.ActionLink("Manage foods", "Index", "Foods")</p>
+</div>

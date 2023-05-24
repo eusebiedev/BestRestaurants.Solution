@@ -31,13 +31,17 @@ namespace BestRestaurants.Controllers
     [HttpPost]
     public ActionResult Create(Restaurant restaurant)
     {
-      if (restaurant.CuisineId == 0)
+      if (!ModelState.IsValid)
       {
+        ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Name");
+        return View(restaurant);
+      }
+      else
+      {
+        _db.Restaurants.Add(restaurant);
+        _db.SaveChanges();
         return RedirectToAction("Index");
       }
-      _db.Restaurants.Add(restaurant);
-      _db.SaveChanges();
-      return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)

@@ -4,6 +4,10 @@
 
 @model BestRestaurants.Models.Cuisine
 
+<p>@Html.ValidationMessageFor(model => model.CuisineId, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
+<p>@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
 <h4>Add a new Cuisine</h4>
 @using (Html.BeginForm())
 { 
